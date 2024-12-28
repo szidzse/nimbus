@@ -93,3 +93,21 @@ export const verifySecret = async ({
     handleError(error, "Failed to verify One-time Password.");
   }
 };
+
+export const getCurrentUser = async () => {
+  const { databases, account } = await createSessionClient();
+
+  const result = await account.get();
+
+  const user = await databases.listDocuments(
+    appwriteConfig.databaseId,
+    appwriteConfig.usersCollectionId,
+    [Query.equal("accountId", result.$id)],
+  );
+
+  if (user.total <= 0) {
+    return null;
+  }
+
+  return parseStringify(user.documents[0]);
+};
