@@ -3,6 +3,7 @@
 import { createAdminClient } from "@/lib/appwrite";
 import { appwriteConfig } from "@/lib/appwrite/config";
 import { ID, Query } from "node-appwrite";
+import { parseStringify } from "@/lib/utils";
 
 const getUserByEmail = async (email: string) => {
   const { databases } = await createAdminClient();
@@ -33,7 +34,7 @@ const sendEmailOTP = async ({ email }: { email: string }) => {
   }
 };
 
-const createAccount = async ({
+export const createAccount = async ({
   fullName,
   email,
 }: {
@@ -43,4 +44,26 @@ const createAccount = async ({
   const existingUser = await getUserByEmail(email);
 
   const accountId = await sendEmailOTP({ email });
+
+  if (!accountId) {
+    throw new Error("Failed to send an OTP.");
+  }
+
+  if (!existingUser) {
+    const { databases } = await createAdminClient();
+
+    await databases.createDocument(
+      appwriteConfig.databaseId,
+      appwriteConfig.usersCollectionId,
+      ID.unique(),
+      {
+        fullName,
+        email,
+        avatar: "https://www.svgrepo.com/show/452030/avatar-default.svg",
+        accountId,
+      },
+    );
+  }
+
+  return parseStringify({ accountId });
 };
