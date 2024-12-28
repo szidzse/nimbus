@@ -7,6 +7,8 @@ It defines two clients:
   https://www.npmjs.com/package/node-appwrite
 */
 
+"use server";
+
 import { Account, Avatars, Client, Databases, Storage } from "node-appwrite";
 import { appwriteConfig } from "@/lib/appwrite/config";
 import { cookies } from "next/headers";
