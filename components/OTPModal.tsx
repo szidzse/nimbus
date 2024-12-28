@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { verifySecret } from "@/lib/actions/user.actions";
+import { sendEmailOTP, verifySecret } from "@/lib/actions/user.actions";
 import { useRouter } from "next/navigation";
 
 import {
@@ -52,7 +52,7 @@ const OtpModal = ({
   };
 
   const handleResendOTP = async () => {
-    // Call API to resend OTP
+    await sendEmailOTP({ email });
   };
 
   return (
