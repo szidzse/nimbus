@@ -4,6 +4,7 @@ import Link from "next/link";
 import Thumbnail from "@/components/Thumbnail";
 import { convertFileSize } from "@/lib/utils";
 import FormattedDateTime from "@/components/FormattedDateTime";
+import ActionDropdown from "@/components/ActionDropdown";
 
 const Card = ({ file }: { file: Models.Document }) => {
   return (
@@ -18,7 +19,7 @@ const Card = ({ file }: { file: Models.Document }) => {
         />
 
         <div className="flex flex-col items-end justify-between">
-          ActionsDropdown...
+          <ActionDropdown file={file} />
           <p className="body-1">{convertFileSize(file.size)}</p>
         </div>
       </div>
@@ -29,6 +30,9 @@ const Card = ({ file }: { file: Models.Document }) => {
           date={file.$createdAt}
           className="body-2 text-light-100"
         />
+        <p className="caption line-clamp-1 text-light-200">
+          By: {file.owner.fullName}
+        </p>
       </div>
     </Link>
   );
