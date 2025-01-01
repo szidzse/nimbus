@@ -72,6 +72,36 @@ export const getFileType = (fileName: string) => {
   return { type: "other", extension };
 };
 
+export const formatDateTime = (isoString: string | null | undefined) => {
+  if (!isoString) return "—";
+
+  const date = new Date(isoString);
+
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+
+  const time = `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}`;
+  const day = date.getDate();
+  const monthNames = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const month = monthNames[date.getMonth()];
+  const year = date.getFullYear();
+
+  return `${time}, ${year}. ${month} ${day}.`;
+};
+
 export const getFileIcon = (
   extension: string | undefined,
   type: FileType | string,
