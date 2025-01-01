@@ -18,6 +18,12 @@ export interface UploadFileProps {
   path: string;
 }
 
+export interface UpdateFileUsersProps {
+  fileId: string;
+  emails: string[];
+  path: string;
+}
+
 interface RenameFileProps {
   fileId: string;
   name: string;
