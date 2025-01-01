@@ -24,6 +24,12 @@ export interface UpdateFileUsersProps {
   path: string;
 }
 
+export interface DeleteFileProps {
+  fileId: string;
+  bucketFileId: string;
+  path: string;
+}
+
 interface RenameFileProps {
   fileId: string;
   name: string;
