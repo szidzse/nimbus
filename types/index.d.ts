@@ -1,3 +1,5 @@
+export type FileType = "document" | "image" | "video" | "audio" | "other";
+
 export interface SearchParamProps {
   params?: Promise<SegmentParams>;
   searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
