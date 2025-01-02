@@ -18,6 +18,13 @@ export interface UploadFileProps {
   path: string;
 }
 
+export interface GetFilesProps {
+  types: FileType[];
+  searchText?: string;
+  sort?: string;
+  limit?: number;
+}
+
 export interface UpdateFileUsersProps {
   fileId: string;
   emails: string[];
