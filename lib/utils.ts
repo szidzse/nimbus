@@ -97,9 +97,8 @@ export const formatDateTime = (isoString: string | null | undefined) => {
     "December",
   ];
   const month = monthNames[date.getMonth()];
-  const year = date.getFullYear();
 
-  return `${time}, ${year}. ${month} ${day}.`;
+  return `${time}, ${month} ${day}`;
 };
 
 export const getFileIcon = (
