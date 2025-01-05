@@ -217,7 +217,7 @@ export const deleteFile = async ({
 
 export const getTotalSpaceUsed = async () => {
   try {
-    const { databases } = await createAdminClient();
+    const { databases } = await createSessionClient();
 
     const currentUser = await getCurrentUser();
     if (!currentUser) {
