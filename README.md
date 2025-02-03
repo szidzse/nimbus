@@ -18,6 +18,22 @@ Nimbus is a storage management platform built with Next.js, Typescript, Appwrite
 
 # Demo Images
 
+### Sign Up
+![nimbus-sign-up](https://github.com/user-attachments/assets/d26ada56-505b-467f-b121-35eab715e787)
+
+### One-time Password
+![nimbus-otp2](https://github.com/user-attachments/assets/470ea9e4-c1c4-45e6-ac96-b4fcba67b599)
+
+### Dashboard
+![nimbus-categories](https://github.com/user-attachments/assets/5aedc63b-d2e5-4b86-b4f6-44e84eb0bd6d)
+
+### File Display
+![nimbus-files](https://github.com/user-attachments/assets/b3dc8ee9-210e-4f58-b3bd-33a90622b296)
+
+### Opened Video Example
+![nimbus-opened-file](https://github.com/user-attachments/assets/4cd0701c-02ae-41c2-92bf-b09e5d022ed3)
+
+
 # Technical Features
 
 - User Authentication with Appwrite
