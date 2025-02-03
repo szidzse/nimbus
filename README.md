@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nimbus - Storage Management Platform
 
-## Getting Started
+# Description
 
-First, run the development server:
+Nimbus is a storage management platform built with Next.js, Typescript, Appwrite Backend-as-a-Service, TailwindCSS and shadcn/ui.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Used Technologies
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+![Appwrite](https://img.shields.io/badge/Appwrite-FA5C5C?style=for-the-badge&logo=appwrite&logoColor=white)
 
-## Learn More
+![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-To learn more about Next.js, take a look at the following resources:
+![ShadCN](https://img.shields.io/badge/ShadCN-000000?style=for-the-badge&logo=shadcn&logoColor=white)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Demo Images
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Technical Features
 
-## Deploy on Vercel
+- User Authentication with Appwrite
+- View and Manage Files
+- File Uploads
+- See file details, rename, download, share and delete
+- File Search
+- Different Sorting Options
+- Responsive Design
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- - -
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Getting Started
+
+## Prerequisites
+
+- "node.js" installed, at least version 18 or newer
+- "npm" installed
+
+## Installation
+
+    # Clone the repository
+    git clone https://github.com/szidzse/nimbus
+
+    # Install dependencies
+    npm install
+
+    # Start the development server
+    npm run dev
+
+## Setting up Appwrite
+
+1. Create an Appwrite account if you haven't already (https://appwrite.io/), then navigate to console
+2. Create a new project, and obtain your credentials
+
+## Environment variables
+
+   Create an .env.local file with the following key-value pairs:
+
+    NEXT_PUBLIC_APPWRITE_ENDPOINT="https://cloud.appwrite.io/v1"
+    NEXT_PUBLIC_APPWRITE_PROJECT=""
+    NEXT_PUBLIC_APPWRITE_DATABASE=""
+    NEXT_PUBLIC_APPWRITE_USERS_COLLECTION=""
+    NEXT_PUBLIC_APPWRITE_FILES_COLLECTION=""
+    NEXT_PUBLIC_APPWRITE_BUCKET=""
+    NEXT_APPWRITE_KEY=""
+
+   Replace the values with your actual Appwrite credentials that you got in the Appwrite Console. (https://cloud.appwrite.io/console/)
+
+# Docker
+
+In progress...
